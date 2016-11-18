@@ -22,6 +22,7 @@ $(function() {
     $('#status').show();
     $.getJSON( "js/records.json", function(data) {
         data = shuffle(data);
+        data = data.slice(0, 50);
         $.each(data, function(index, record) {
             $('#grid').append('<a title="' + record.title + '" class="grid-item pull-left thumbnail" href="' + record.repository_url + '"><img alt="' + record.title + '" src="images/' + record.version_id + '.jpg"></a>');
         });
